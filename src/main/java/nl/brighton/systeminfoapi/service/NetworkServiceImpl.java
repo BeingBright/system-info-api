@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @Service
 public class NetworkServiceImpl implements NetworkService {
     @Override
-    public NetworkInfoCollection GetNetworkInfo() {
+    public NetworkInfoCollection getNetworkInfo() {
         NetworkIF[] networkIFs = new SystemInfo().getHardware().getNetworkIFs();
         ArrayList<NetworkInfoDTO> networkInfos = new ArrayList<>();
         for (NetworkIF networkIF : networkIFs) {

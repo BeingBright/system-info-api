@@ -22,4 +22,8 @@ public class DiskResource {
     public ResponseEntity<DiskInfoCollection> getDiskInfo() {
         return ResponseEntity.ok(service.getDiskInfo());
     }
+
+    public void setService(DiskService service) {
+        this.service = service;
+    }
 }

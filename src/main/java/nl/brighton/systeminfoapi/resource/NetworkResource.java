@@ -19,7 +19,11 @@ public class NetworkResource {
 
     @ResponseBody
     @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<NetworkInfoCollection> GetNetworkInfo() {
-        return ResponseEntity.ok(service.GetNetworkInfo());
+    public ResponseEntity<NetworkInfoCollection> getNetworkInfo() {
+        return ResponseEntity.ok(service.getNetworkInfo());
+    }
+
+    public void setService(NetworkService service) {
+        this.service = service;
     }
 }

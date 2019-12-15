@@ -19,7 +19,7 @@ public class MemoryResource {
     private MemoryService service;
 
     @ResponseBody
-    @RequestMapping(path = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<MemoryInfoDTO> getMemoryInfo() {
         return ResponseEntity.ok(service.getMemoryInfo());
     }
@@ -30,4 +30,7 @@ public class MemoryResource {
         return ResponseEntity.ok(service.getAvailableMemory());
     }
 
+    public void setService(MemoryService service) {
+        this.service = service;
+    }
 }

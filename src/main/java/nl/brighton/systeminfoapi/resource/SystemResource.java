@@ -22,4 +22,8 @@ public class SystemResource {
     public ResponseEntity<SystemInfoDTO> getSystemInfo() {
         return ResponseEntity.ok(service.getSystemInfo());
     }
+
+    public void setService(SystemService service) {
+        this.service = service;
+    }
 }

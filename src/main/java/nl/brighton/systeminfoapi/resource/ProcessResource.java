@@ -22,4 +22,8 @@ public class ProcessResource {
     public ResponseEntity<ProcessInfoCollection> getProcessInfo() {
         return ResponseEntity.ok(service.getProcess());
     }
+
+    public void setService(ProcessService service) {
+        this.service = service;
+    }
 }

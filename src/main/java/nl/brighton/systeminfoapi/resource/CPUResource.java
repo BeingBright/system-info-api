@@ -1,7 +1,6 @@
 package nl.brighton.systeminfoapi.resource;
 
 import nl.brighton.systeminfoapi.dto.CPUInfoDTO;
-import nl.brighton.systeminfoapi.dto.DiskInfoCollection;
 import nl.brighton.systeminfoapi.service.CPUService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -22,5 +21,9 @@ public class CPUResource {
     @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CPUInfoDTO> getCPUInfo() {
         return ResponseEntity.ok(service.getCPUInfo());
+    }
+
+    public void setService(CPUService service) {
+        this.service = service;
     }
 }
