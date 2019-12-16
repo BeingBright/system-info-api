@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class ProcessInfoCollection {
 
-    ArrayList<ProcessInfoDTO> processes;
+    private ArrayList<ProcessInfoDTO> processes;
 
     public ProcessInfoCollection(ArrayList<ProcessInfoDTO> processes) {
         this.processes = processes;
@@ -33,5 +33,17 @@ public class ProcessInfoCollection {
         return "ProcessInfoCollection{" +
                 "processes=" + processes +
                 '}';
+    }
+
+    public boolean add(ProcessInfoDTO processInfoDTO) {
+        return processes.add(processInfoDTO);
+    }
+
+    public boolean contains(ProcessInfoDTO processInfoDTO) {
+        return processes.contains(processInfoDTO);
+    }
+
+    public boolean remove(ProcessInfoDTO processInfoDTO) {
+        return processes.remove(processInfoDTO);
     }
 }

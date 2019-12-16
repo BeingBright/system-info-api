@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class NetworkInfoCollection {
 
-    ArrayList<NetworkInfoDTO> networkInfos;
+    private ArrayList<NetworkInfoDTO> networkInfos;
 
     public NetworkInfoCollection(ArrayList<NetworkInfoDTO> networkInfos) {
         this.networkInfos = networkInfos;
@@ -33,5 +33,17 @@ public class NetworkInfoCollection {
         return "NetworkInfoCollection{" +
                 "networkInfos=" + networkInfos +
                 '}';
+    }
+
+    public boolean add(NetworkInfoDTO networkInfoDTO) {
+        return networkInfos.add(networkInfoDTO);
+    }
+
+    public boolean contains(NetworkInfoDTO networkInfoDTO) {
+        return networkInfos.contains(networkInfoDTO);
+    }
+
+    public boolean remove(NetworkInfoDTO networkInfoDTO) {
+        return networkInfos.remove(networkInfoDTO);
     }
 }
