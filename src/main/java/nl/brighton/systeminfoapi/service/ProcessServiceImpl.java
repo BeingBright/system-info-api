@@ -2,17 +2,25 @@ package nl.brighton.systeminfoapi.service;
 
 import nl.brighton.systeminfoapi.dto.ProcessInfoCollection;
 import nl.brighton.systeminfoapi.dto.ProcessInfoDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import oshi.SystemInfo;
 import oshi.software.os.OperatingSystem;
 
 import java.util.ArrayList;
 
 @Service
 public class ProcessServiceImpl implements ProcessService {
+
+    private SystemTelemetryService service;
+
+    @Autowired
+    public void setService(SystemTelemetryService service) {
+        this.service = service;
+    }
+
     @Override
     public ProcessInfoCollection getProcess() {
-        OperatingSystem operatingSystem = new SystemInfo().getOperatingSystem();
+        OperatingSystem operatingSystem = service.getSystem();
 
         ArrayList<ProcessInfoDTO> processes = new ArrayList<>();
 

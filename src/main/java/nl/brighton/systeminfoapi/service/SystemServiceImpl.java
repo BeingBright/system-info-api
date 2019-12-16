@@ -1,10 +1,18 @@
 package nl.brighton.systeminfoapi.service;
 
 import nl.brighton.systeminfoapi.dto.SystemInfoDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SystemServiceImpl implements SystemService {
+
+    private SystemTelemetryService service;
+
+    @Autowired
+    public void setService(SystemTelemetryService service) {
+        this.service = service;
+    }
 
     @Override
     public SystemInfoDTO getSystemInfo() {

@@ -2,6 +2,7 @@ package nl.brighton.systeminfoapi.service;
 
 import nl.brighton.systeminfoapi.dto.CPUCoreDTO;
 import nl.brighton.systeminfoapi.dto.CPUInfoDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
@@ -10,6 +11,14 @@ import java.util.ArrayList;
 
 @Service
 public class CPUServiceImpl implements CPUService {
+
+
+    private SystemTelemetryService service;
+
+    @Autowired
+    public void setService(SystemTelemetryService service) {
+        this.service = service;
+    }
 
     @Override
     public CPUInfoDTO getCPUInfo() {
