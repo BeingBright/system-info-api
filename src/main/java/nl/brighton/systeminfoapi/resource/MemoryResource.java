@@ -2,8 +2,6 @@ package nl.brighton.systeminfoapi.resource;
 
 import nl.brighton.systeminfoapi.dto.MemoryInfoDTO;
 import nl.brighton.systeminfoapi.service.MemoryService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +16,6 @@ public class MemoryResource {
 
     @Autowired
     private MemoryService service;
-
 
 
     @ResponseBody
