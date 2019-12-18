@@ -20,7 +20,7 @@ Expects: ``Nothing``
 Result: ``` ```  
 Errors: ``404 Disk Not Found``  
   
-Path: ``/memory`` 
+Path: ``/memory``  
 Methode: ``GET``  
 Expects: ``Nothing``  
 Result: ``` ```  
