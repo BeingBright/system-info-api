@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Component
-@Order(1)
+@Order(2)
 public class RequestResponseLoggingFilter implements Filter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MemoryService.class);
