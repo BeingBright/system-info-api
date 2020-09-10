@@ -1,6 +1,5 @@
 package nl.brighton.systeminfoapi.resource.exception.handler;
 
-import nl.brighton.systeminfoapi.service.MemoryService;
 import nl.brighton.systeminfoapi.service.exception.DiskNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +13,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 @ControllerAdvice
 public class RestExceptionHandler {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(MemoryService.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(RestExceptionHandler.class);
 
     @ExceptionHandler({
             DiskNotFoundException.class,

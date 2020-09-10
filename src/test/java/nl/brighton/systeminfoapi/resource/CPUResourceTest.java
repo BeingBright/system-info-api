@@ -1,6 +1,6 @@
 package nl.brighton.systeminfoapi.resource;
 
-import nl.brighton.systeminfoapi.dto.CPUInfoDTO;
+import nl.brighton.systeminfoapi.dto.CPU;
 import nl.brighton.systeminfoapi.service.CPUService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +17,7 @@ class CPUResourceTest {
     void setUp() {
         sut = new CPUResource();
         mockedService = Mockito.mock(CPUService.class);
-        Mockito.when(mockedService.getCPUInfo()).thenReturn(new CPUInfoDTO(0, 0, null));
+        Mockito.when(mockedService.getCPUInfo()).thenReturn(null);
         sut.setService(mockedService);
     }
 
@@ -30,7 +30,7 @@ class CPUResourceTest {
 
     @Test
     void getCPUInfoReturnsObjectOfTypeCPUInfoDTO() {
-        var expected = new CPUInfoDTO(0, 0, null);
+        var expected = new CPU();
         var result = sut.getCPUInfo();
         Assertions.assertEquals(expected, result.getBody());
     }
