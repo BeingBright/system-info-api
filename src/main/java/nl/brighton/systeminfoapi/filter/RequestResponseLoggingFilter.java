@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import nl.brighton.systeminfoapi.SystemInfoApiApplication;
 import nl.brighton.systeminfoapi.service.MemoryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Order(2)
 public class RequestResponseLoggingFilter implements Filter {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(MemoryService.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(RequestResponseLoggingFilter.class);
 
   @Override
   public void doFilter(
