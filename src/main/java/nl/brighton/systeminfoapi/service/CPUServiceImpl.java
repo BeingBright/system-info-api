@@ -28,8 +28,6 @@ public class CPUServiceImpl implements CPUService {
     for (long freq : centralProcessor.getCurrentFreq()) {
       int coreID = i / (centralProcessor.getLogicalProcessorCount() / centralProcessor
           .getPhysicalProcessorCount());
-      System.out.println(coreID);
-      System.out.println(i);
       cores.add(new CPUCoreDTO(freq, coreID, i));
       i++;
     }
