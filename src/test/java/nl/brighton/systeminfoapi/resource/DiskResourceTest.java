@@ -10,9 +10,11 @@ import nl.brighton.systeminfoapi.dto.DiskInfoCollection;
 import nl.brighton.systeminfoapi.dto.DiskInfoDTO;
 import nl.brighton.systeminfoapi.service.DiskService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
+@Tag("unit-test")
 class DiskResourceTest {
 
   private DiskService mockedService;

@@ -8,9 +8,11 @@ import static org.mockito.Mockito.when;
 import nl.brighton.systeminfoapi.dto.ProcessInfoCollection;
 import nl.brighton.systeminfoapi.service.ProcessService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
+@Tag("unit-test")
 class ProcessResourceTest {
 
   private ProcessService mockedService;

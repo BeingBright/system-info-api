@@ -8,9 +8,11 @@ import static org.mockito.Mockito.when;
 import nl.brighton.systeminfoapi.dto.SystemInfoDTO;
 import nl.brighton.systeminfoapi.service.SystemService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
+@Tag("unit-test")
 class SystemResourceTest {
 
   private SystemService mockedService;

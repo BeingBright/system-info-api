@@ -8,9 +8,11 @@ import nl.brighton.systeminfoapi.dto.CPUInfoDTO;
 import nl.brighton.systeminfoapi.service.CPUService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
+@Tag("unit-test")
 class CPUResourceTest {
 
   private CPUService mockedService;
