@@ -48,6 +48,7 @@ public class CPUCoreDTO {
   public String toString() {
     return "CPUCoreDTO{" +
         "currentFrequency=" + currentFrequency +
+        ", coreID=" + coreID +
         ", processorNumber=" + processorNumber +
         '}';
   }
