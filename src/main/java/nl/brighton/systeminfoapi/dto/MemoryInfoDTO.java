@@ -8,7 +8,7 @@ public class MemoryInfoDTO {
   private long total;
   private long available;
   private long pageSize;
-  private ArrayList<PhysicalMemoryDTO> physicalMemory;
+  private final ArrayList<PhysicalMemoryDTO> physicalMemory;
 
   public MemoryInfoDTO() {
     this.physicalMemory = new ArrayList<>();

@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class DiskInfoCollection {
 
-  private ArrayList<DiskInfoDTO> disks;
+  private final ArrayList<DiskInfoDTO> disks;
 
   public DiskInfoCollection() {
     disks = new ArrayList<>();

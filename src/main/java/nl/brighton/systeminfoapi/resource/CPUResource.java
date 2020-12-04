@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "cpu")
 public class CPUResource {
 
-  @Autowired
   private CPUService service;
 
   @ResponseBody
@@ -23,6 +22,7 @@ public class CPUResource {
     return ResponseEntity.ok(service.getCPUInfo());
   }
 
+  @Autowired
   public void setService(CPUService service) {
     this.service = service;
   }

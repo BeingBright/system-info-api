@@ -23,9 +23,15 @@ import oshi.software.os.OperatingSystem;
 @Service
 public class SystemTelemetryServiceImpl implements SystemTelemetryService {
 
-  SystemInfo systemInfo = new SystemInfo();
-  HardwareAbstractionLayer hardware = systemInfo.getHardware();
-  OperatingSystem operatingSystem = systemInfo.getOperatingSystem();
+  private static SystemInfo systemInfo;
+  private static HardwareAbstractionLayer hardware;
+  private static OperatingSystem operatingSystem;
+
+  public SystemTelemetryServiceImpl() {
+    systemInfo = new SystemInfo();
+    hardware = systemInfo.getHardware();
+    operatingSystem = systemInfo.getOperatingSystem();
+  }
 
   @Override
   public File[] getRoots() {
@@ -164,6 +170,6 @@ public class SystemTelemetryServiceImpl implements SystemTelemetryService {
 
   @Override
   public CentralProcessor getProcessor() {
-    return null;
+    return hardware.getProcessor();
   }
 }

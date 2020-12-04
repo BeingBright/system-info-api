@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class CPUCoreDTO {
 
-  private long currentFrequency;
-  private int coreID;
-  private int processorNumber;
+  private final long currentFrequency;
+  private final int coreID;
+  private final int processorNumber;
 
   public CPUCoreDTO(long currentFrequency, int coreID, int processorNumber) {
     this.currentFrequency = currentFrequency;

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "system")
 public class SystemResource {
 
-  @Autowired
   private SystemService service;
 
   @ResponseBody
@@ -23,6 +22,7 @@ public class SystemResource {
     return ResponseEntity.ok(service.getSystemInfo());
   }
 
+  @Autowired
   public void setService(SystemService service) {
     this.service = service;
   }

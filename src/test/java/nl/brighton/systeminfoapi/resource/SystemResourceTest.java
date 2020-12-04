@@ -1,11 +1,14 @@
 package nl.brighton.systeminfoapi.resource;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import nl.brighton.systeminfoapi.dto.SystemInfoDTO;
 import nl.brighton.systeminfoapi.service.SystemService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;
 
 class SystemResourceTest {
@@ -17,23 +20,30 @@ class SystemResourceTest {
   @BeforeEach
   void setUp() {
     sut = new SystemResource();
-    mockedService = Mockito.mock(SystemService.class);
-    Mockito.when(mockedService.getSystemInfo())
+    mockedService = mock(SystemService.class);
+    when(mockedService.getSystemInfo())
         .thenReturn(new SystemInfoDTO("", "", "", "", "", ""));
     sut.setService(mockedService);
   }
 
   @Test
   void getSystemInfoReturnsStatusOK() {
-    var expected = HttpStatus.OK;
-    var result = sut.getSystemInfo();
-    Assertions.assertEquals(expected, result.getStatusCode());
+    HttpStatus expected = HttpStatus.OK;
+    HttpStatus result = sut.getSystemInfo().getStatusCode();
+    assertEquals(expected, result);
   }
 
   @Test
   void getSystemInfoReturnsObjectOfTypeCPUInfoDTO() {
-    var expected = new SystemInfoDTO("", "", "", "", "", "");
-    var result = sut.getSystemInfo();
-    Assertions.assertEquals(expected, result.getBody());
+    SystemInfoDTO expected = new SystemInfoDTO("", "", "", "", "", "");
+    SystemInfoDTO result = sut.getSystemInfo().getBody();
+    assertEquals(expected, result);
   }
+
+  @Test
+  void getSystemInfoUsesService() {
+    sut.getSystemInfo();
+    verify(mockedService).getSystemInfo();
+  }
+
 }

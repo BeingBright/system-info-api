@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "memory")
 public class MemoryResource {
 
-  @Autowired
   private MemoryService service;
 
 
@@ -24,6 +23,7 @@ public class MemoryResource {
     return ResponseEntity.ok(service.getMemoryInfo());
   }
 
+  @Autowired
   public void setService(MemoryService service) {
     this.service = service;
   }

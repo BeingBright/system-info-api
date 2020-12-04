@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "network")
 public class NetworkResource {
 
-  @Autowired
   private NetworkService service;
 
   @ResponseBody
@@ -23,6 +22,7 @@ public class NetworkResource {
     return ResponseEntity.ok(service.getNetworkInfo());
   }
 
+  @Autowired
   public void setService(NetworkService service) {
     this.service = service;
   }

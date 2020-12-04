@@ -4,16 +4,16 @@ import java.util.Objects;
 
 public class ProcessInfoDTO {
 
-  private int processID;
-  private String name;
-  private long kernelTime;
-  private int parentProcessID;
-  private String userID;
-  private long upTime;
-  private int priority;
-  private long bytesRead;
-  private long bytesWritten;
-  private int bitness;
+  private final int processID;
+  private final String name;
+  private final long kernelTime;
+  private final int parentProcessID;
+  private final String userID;
+  private final long upTime;
+  private final int priority;
+  private final long bytesRead;
+  private final long bytesWritten;
+  private final int bitness;
 
 
   public ProcessInfoDTO(int processID, String name, long kernelTime, int parentProcessID,

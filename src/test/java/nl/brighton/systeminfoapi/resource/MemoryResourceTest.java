@@ -1,11 +1,14 @@
 package nl.brighton.systeminfoapi.resource;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import nl.brighton.systeminfoapi.dto.MemoryInfoDTO;
 import nl.brighton.systeminfoapi.service.MemoryService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;
 
 class MemoryResourceTest {
@@ -16,28 +19,28 @@ class MemoryResourceTest {
   @BeforeEach
   void setUp() {
     sut = new MemoryResource();
-    mockedService = Mockito.mock(MemoryService.class);
-    Mockito.when(mockedService.getMemoryInfo()).thenReturn(new MemoryInfoDTO(0, 0, 0, null));
+    mockedService = mock(MemoryService.class);
+    when(mockedService.getMemoryInfo()).thenReturn(new MemoryInfoDTO(0, 0, 0, null));
     sut.setService(mockedService);
   }
 
   @Test
   void getMemoryInfoReturnsStatusOK() {
-    var expected = HttpStatus.OK;
-    var result = sut.getMemoryInfo();
-    Assertions.assertEquals(expected, result.getStatusCode());
+    HttpStatus expected = HttpStatus.OK;
+    HttpStatus result = sut.getMemoryInfo().getStatusCode();
+    assertEquals(expected, result);
   }
 
   @Test
   void getMemoryInfoReturnsObjectOfTypeCPUInfoDTO() {
-    var expected = new MemoryInfoDTO(0, 0, 0, null);
-    var result = sut.getMemoryInfo();
-    Assertions.assertEquals(expected, result.getBody());
+    MemoryInfoDTO expected = new MemoryInfoDTO(0, 0, 0, null);
+    MemoryInfoDTO result = sut.getMemoryInfo().getBody();
+    assertEquals(expected, result);
   }
 
   @Test
   void getMemoryInfoUsesService() {
     sut.getMemoryInfo();
-    Mockito.verify(mockedService).getMemoryInfo();
+    verify(mockedService).getMemoryInfo();
   }
 }

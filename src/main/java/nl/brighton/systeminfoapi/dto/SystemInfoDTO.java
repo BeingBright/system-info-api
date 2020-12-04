@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class SystemInfoDTO {
 
-  private String osName;
-  private String osArch;
-  private String osVersion;
+  private final String osName;
+  private final String osArch;
+  private final String osVersion;
 
-  private String javaVersion;
-  private String javaVMVersion;
-  private String javaVMName;
+  private final String javaVersion;
+  private final String javaVMVersion;
+  private final String javaVMName;
 
   public SystemInfoDTO(String osName, String osArch, String osVersion, String javaVersion,
       String javaVMVersion, String javaVMName) {
@@ -60,12 +60,12 @@ public class SystemInfoDTO {
 
   @Override
   public boolean equals(Object o) {
-      if (this == o) {
-          return true;
-      }
-      if (o == null || getClass() != o.getClass()) {
-          return false;
-      }
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
     SystemInfoDTO that = (SystemInfoDTO) o;
     return Objects.equals(osName, that.osName) &&
         Objects.equals(osArch, that.osArch) &&

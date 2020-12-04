@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class ProcessInfoCollection {
 
-  private ArrayList<ProcessInfoDTO> processes;
+  private final ArrayList<ProcessInfoDTO> processes;
 
   public ProcessInfoCollection(ArrayList<ProcessInfoDTO> processes) {
     this.processes = processes;

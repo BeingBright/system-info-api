@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "process")
 public class ProcessResource {
 
-  @Autowired
   private ProcessService service;
 
   @ResponseBody
@@ -23,6 +22,7 @@ public class ProcessResource {
     return ResponseEntity.ok(service.getProcess());
   }
 
+  @Autowired
   public void setService(ProcessService service) {
     this.service = service;
   }

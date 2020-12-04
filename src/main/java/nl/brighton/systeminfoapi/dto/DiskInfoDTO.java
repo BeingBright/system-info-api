@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class DiskInfoDTO {
 
-  private String absolutePath;
-  private long totalSpace;
-  private long freeSpace;
-  private long usableSpace;
+  private final String absolutePath;
+  private final long totalSpace;
+  private final long freeSpace;
+  private final long usableSpace;
 
   public DiskInfoDTO(String absolutePath, long totalSpace, long freeSpace, long usableSpace) {
     this.absolutePath = absolutePath;

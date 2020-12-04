@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class NetworkInfoCollection {
 
-  private ArrayList<NetworkInfoDTO> networkInfos;
+  private final ArrayList<NetworkInfoDTO> networkInfos;
 
   public NetworkInfoCollection(ArrayList<NetworkInfoDTO> networkInfos) {
     this.networkInfos = networkInfos;

@@ -1,11 +1,14 @@
 package nl.brighton.systeminfoapi.resource;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import nl.brighton.systeminfoapi.dto.ProcessInfoCollection;
 import nl.brighton.systeminfoapi.service.ProcessService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;
 
 class ProcessResourceTest {
@@ -16,28 +19,28 @@ class ProcessResourceTest {
   @BeforeEach
   void setUp() {
     sut = new ProcessResource();
-    mockedService = Mockito.mock(ProcessService.class);
-    Mockito.when(mockedService.getProcess()).thenReturn(new ProcessInfoCollection(null));
+    mockedService = mock(ProcessService.class);
+    when(mockedService.getProcess()).thenReturn(new ProcessInfoCollection(null));
     sut.setService(mockedService);
   }
 
   @Test
   void getProcessInfoReturnsStatusOK() {
-    var expected = HttpStatus.OK;
-    var result = sut.getProcessInfo();
-    Assertions.assertEquals(expected, result.getStatusCode());
+    HttpStatus expected = HttpStatus.OK;
+    HttpStatus result = sut.getProcessInfo().getStatusCode();
+    assertEquals(expected, result);
   }
 
   @Test
   void getProcessInfoReturnsObjectOfTypeCPUInfoDTO() {
-    var expected = new ProcessInfoCollection(null);
-    var result = sut.getProcessInfo();
-    Assertions.assertEquals(expected, result.getBody());
+    ProcessInfoCollection expected = new ProcessInfoCollection(null);
+    ProcessInfoCollection result = sut.getProcessInfo().getBody();
+    assertEquals(expected, result);
   }
 
   @Test
   void getProcessInfoUsesService() {
     sut.getProcessInfo();
-    Mockito.verify(mockedService).getProcess();
+    verify(mockedService).getProcess();
   }
 }

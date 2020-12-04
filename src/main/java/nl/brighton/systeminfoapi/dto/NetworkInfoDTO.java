@@ -5,13 +5,13 @@ import java.util.Objects;
 
 public class NetworkInfoDTO {
 
-  private String name;
-  private String[] IPv4;
-  private String[] IPV6;
-  private long bytesSent;
-  private long bytesReceived;
-  private long packetSent;
-  private long packetReceived;
+  private final String name;
+  private final String[] IPv4;
+  private final String[] IPV6;
+  private final long bytesSent;
+  private final long bytesReceived;
+  private final long packetSent;
+  private final long packetReceived;
 
   public NetworkInfoDTO(String name, String[] IPv4, String[] IPV6, long bytesSent,
       long bytesReceived, long packetSent, long packetReceived) {

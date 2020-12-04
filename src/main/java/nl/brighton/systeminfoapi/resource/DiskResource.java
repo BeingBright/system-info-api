@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "disk")
 public class DiskResource {
 
-  @Autowired
   private DiskService service;
 
   @ResponseBody
@@ -31,6 +30,7 @@ public class DiskResource {
     return ResponseEntity.ok(service.getDiskInfo(name));
   }
 
+  @Autowired
   public void setService(DiskService service) {
     this.service = service;
   }

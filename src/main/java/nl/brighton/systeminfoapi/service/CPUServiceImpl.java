@@ -5,7 +5,6 @@ import nl.brighton.systeminfoapi.dto.CPUCoreDTO;
 import nl.brighton.systeminfoapi.dto.CPUInfoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
 
 @Service
@@ -21,7 +20,7 @@ public class CPUServiceImpl implements CPUService {
 
   @Override
   public CPUInfoDTO getCPUInfo() {
-    CentralProcessor centralProcessor = new SystemInfo().getHardware().getProcessor();
+    CentralProcessor centralProcessor = service.getProcessor();
 
     ArrayList<CPUCoreDTO> cores = new ArrayList<>();
     int i = 0;

@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public class CPUInfoDTO {
 
-  private int numberOfCores;
-  private long maxFrequency;
-  private ArrayList<CPUCoreDTO> cores;
+  private final int numberOfCores;
+  private final long maxFrequency;
+  private final ArrayList<CPUCoreDTO> cores;
 
   public CPUInfoDTO(int numberOfCores, long maxFrequency, ArrayList<CPUCoreDTO> cores) {
     this.numberOfCores = numberOfCores;
