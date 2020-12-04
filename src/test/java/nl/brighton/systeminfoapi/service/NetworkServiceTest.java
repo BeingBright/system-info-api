@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 class NetworkServiceTest {
 
-    @BeforeEach
-    void setUp() {
-    }
+  @BeforeEach
+  void setUp() {
+  }
 }

@@ -1,67 +1,80 @@
 package nl.brighton.systeminfoapi.service;
 
-import oshi.SystemInfo;
-import oshi.hardware.*;
-import oshi.software.os.*;
-
 import java.io.File;
+import oshi.SystemInfo;
+import oshi.hardware.CentralProcessor;
+import oshi.hardware.ComputerSystem;
+import oshi.hardware.Display;
+import oshi.hardware.GlobalMemory;
+import oshi.hardware.HWDiskStore;
+import oshi.hardware.HardwareAbstractionLayer;
+import oshi.hardware.NetworkIF;
+import oshi.hardware.PowerSource;
+import oshi.hardware.Sensors;
+import oshi.hardware.SoundCard;
+import oshi.hardware.UsbDevice;
+import oshi.software.os.FileSystem;
+import oshi.software.os.NetworkParams;
+import oshi.software.os.OSProcess;
+import oshi.software.os.OSService;
+import oshi.software.os.OperatingSystem;
 
 public interface SystemTelemetryService {
 
-    File[] getRoots();
+  File[] getRoots();
 
-    SystemInfo getSystemInfo();
+  SystemInfo getSystemInfo();
 
-    HardwareAbstractionLayer getHardware();
+  HardwareAbstractionLayer getHardware();
 
-    NetworkIF[] getNetworkIfs();
+  NetworkIF[] getNetworkIfs();
 
-    GlobalMemory getMemory();
+  GlobalMemory getMemory();
 
-    ComputerSystem getComputerSystem();
+  ComputerSystem getComputerSystem();
 
-    HWDiskStore[] getDisks();
+  HWDiskStore[] getDisks();
 
-    Display[] getDisplays();
+  Display[] getDisplays();
 
-    PowerSource[] getPowerSource();
+  PowerSource[] getPowerSource();
 
-    Sensors getSensors();
+  Sensors getSensors();
 
-    SoundCard[] getSoundCards();
+  SoundCard[] getSoundCards();
 
-    UsbDevice[] getUsbDevices(boolean b);
+  UsbDevice[] getUsbDevices(boolean b);
 
-    OperatingSystem getSystem();
+  OperatingSystem getSystem();
 
-    OSProcess[] getProcesses();
+  OSProcess[] getProcesses();
 
-    OSProcess getProcess(int index);
+  OSProcess getProcess(int index);
 
-    OSProcess getProcess(int index, boolean b);
+  OSProcess getProcess(int index, boolean b);
 
-    int getBitVersion();
+  int getBitVersion();
 
-    String getManufacturer();
+  String getManufacturer();
 
-    String getFamily();
+  String getFamily();
 
-    FileSystem getFileSystem();
+  FileSystem getFileSystem();
 
-    NetworkParams getNetworkParams();
+  NetworkParams getNetworkParams();
 
-    int getProcessCount();
+  int getProcessCount();
 
-    OSService[] getOsServices();
+  OSService[] getOsServices();
 
-    long getSystemBootTime();
+  long getSystemBootTime();
 
-    long getSystemUpTime();
+  long getSystemUpTime();
 
-    int getThreadCount();
+  int getThreadCount();
 
-    OperatingSystem.OSVersionInfo getOsVersionInfo();
+  OperatingSystem.OSVersionInfo getOsVersionInfo();
 
-    CentralProcessor getProcessor();
+  CentralProcessor getProcessor();
 
 }

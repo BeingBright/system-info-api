@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 class CPUServiceTest {
 
-    @BeforeEach
-    void setUp() {
-    }
+  @BeforeEach
+  void setUp() {
+  }
 }

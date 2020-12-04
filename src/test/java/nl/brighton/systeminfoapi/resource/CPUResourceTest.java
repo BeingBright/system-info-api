@@ -10,34 +10,34 @@ import org.springframework.http.HttpStatus;
 
 class CPUResourceTest {
 
-    private CPUService mockedService;
-    private CPUResource sut;
+  private CPUService mockedService;
+  private CPUResource sut;
 
-    @BeforeEach
-    void setUp() {
-        sut = new CPUResource();
-        mockedService = Mockito.mock(CPUService.class);
-        Mockito.when(mockedService.getCPUInfo()).thenReturn(new CPUInfoDTO(0, 0, null));
-        sut.setService(mockedService);
-    }
+  @BeforeEach
+  void setUp() {
+    sut = new CPUResource();
+    mockedService = Mockito.mock(CPUService.class);
+    Mockito.when(mockedService.getCPUInfo()).thenReturn(new CPUInfoDTO(0, 0, null));
+    sut.setService(mockedService);
+  }
 
-    @Test
-    void getCPUInfoReturnsStatusOK() {
-        var expected = HttpStatus.OK;
-        var result = sut.getCPUInfo();
-        Assertions.assertEquals(expected, result.getStatusCode());
-    }
+  @Test
+  void getCPUInfoReturnsStatusOK() {
+    var expected = HttpStatus.OK;
+    var result = sut.getCPUInfo();
+    Assertions.assertEquals(expected, result.getStatusCode());
+  }
 
-    @Test
-    void getCPUInfoReturnsObjectOfTypeCPUInfoDTO() {
-        var expected = new CPUInfoDTO(0, 0, null);
-        var result = sut.getCPUInfo();
-        Assertions.assertEquals(expected, result.getBody());
-    }
+  @Test
+  void getCPUInfoReturnsObjectOfTypeCPUInfoDTO() {
+    var expected = new CPUInfoDTO(0, 0, null);
+    var result = sut.getCPUInfo();
+    Assertions.assertEquals(expected, result.getBody());
+  }
 
-    @Test
-    void getCPUInfoUsesService() {
-        sut.getCPUInfo();
-        Mockito.verify(mockedService).getCPUInfo();
-    }
+  @Test
+  void getCPUInfoUsesService() {
+    sut.getCPUInfo();
+    Mockito.verify(mockedService).getCPUInfo();
+  }
 }

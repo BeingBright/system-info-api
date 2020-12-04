@@ -4,5 +4,5 @@ import nl.brighton.systeminfoapi.dto.MemoryInfoDTO;
 
 public interface MemoryService {
 
-    MemoryInfoDTO getMemoryInfo();
+  MemoryInfoDTO getMemoryInfo();
 }

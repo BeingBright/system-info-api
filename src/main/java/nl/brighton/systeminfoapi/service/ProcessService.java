@@ -4,5 +4,5 @@ import nl.brighton.systeminfoapi.dto.ProcessInfoCollection;
 
 public interface ProcessService {
 
-    ProcessInfoCollection getProcess();
+  ProcessInfoCollection getProcess();
 }

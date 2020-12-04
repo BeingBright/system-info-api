@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "process")
 public class ProcessResource {
 
-    @Autowired
-    private ProcessService service;
+  @Autowired
+  private ProcessService service;
 
-    @ResponseBody
-    @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ProcessInfoCollection> getProcessInfo() {
-        return ResponseEntity.ok(service.getProcess());
-    }
+  @ResponseBody
+  @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<ProcessInfoCollection> getProcessInfo() {
+    return ResponseEntity.ok(service.getProcess());
+  }
 
-    public void setService(ProcessService service) {
-        this.service = service;
-    }
+  public void setService(ProcessService service) {
+    this.service = service;
+  }
 }

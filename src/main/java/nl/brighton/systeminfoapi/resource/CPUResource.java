@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "cpu")
 public class CPUResource {
 
-    @Autowired
-    private CPUService service;
+  @Autowired
+  private CPUService service;
 
-    @ResponseBody
-    @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CPUInfoDTO> getCPUInfo() {
-        return ResponseEntity.ok(service.getCPUInfo());
-    }
+  @ResponseBody
+  @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<CPUInfoDTO> getCPUInfo() {
+    return ResponseEntity.ok(service.getCPUInfo());
+  }
 
-    public void setService(CPUService service) {
-        this.service = service;
-    }
+  public void setService(CPUService service) {
+    this.service = service;
+  }
 }

@@ -12,12 +12,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Order(1)
 public class CORSFilter implements WebMvcConfigurer {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MemoryService.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(MemoryService.class);
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedMethods("GET", "POST");
-        LOGGER.info(registry.toString());
-    }
+  @Override
+  public void addCorsMappings(CorsRegistry registry) {
+    registry.addMapping("/**")
+        .allowedMethods("GET", "POST");
+    LOGGER.info(registry.toString());
+  }
 }

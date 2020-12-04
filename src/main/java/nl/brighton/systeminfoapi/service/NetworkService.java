@@ -4,6 +4,6 @@ import nl.brighton.systeminfoapi.dto.NetworkInfoCollection;
 
 public interface NetworkService {
 
-    NetworkInfoCollection getNetworkInfo();
+  NetworkInfoCollection getNetworkInfo();
 
 }

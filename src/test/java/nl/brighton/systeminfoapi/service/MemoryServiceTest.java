@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 class MemoryServiceTest {
 
-    @BeforeEach
-    void setUp() {
-    }
+  @BeforeEach
+  void setUp() {
+  }
 }

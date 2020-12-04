@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "system")
 public class SystemResource {
 
-    @Autowired
-    private SystemService service;
+  @Autowired
+  private SystemService service;
 
-    @ResponseBody
-    @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<SystemInfoDTO> getSystemInfo() {
-        return ResponseEntity.ok(service.getSystemInfo());
-    }
+  @ResponseBody
+  @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<SystemInfoDTO> getSystemInfo() {
+    return ResponseEntity.ok(service.getSystemInfo());
+  }
 
-    public void setService(SystemService service) {
-        this.service = service;
-    }
+  public void setService(SystemService service) {
+    this.service = service;
+  }
 }

@@ -7,22 +7,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class SystemServiceImpl implements SystemService {
 
-    private SystemTelemetryService service;
+  private SystemTelemetryService service;
 
-    @Autowired
-    public void setService(SystemTelemetryService service) {
-        this.service = service;
-    }
+  @Autowired
+  public void setService(SystemTelemetryService service) {
+    this.service = service;
+  }
 
-    @Override
-    public SystemInfoDTO getSystemInfo() {
-        return new SystemInfoDTO(
-                System.getProperty("os.name"),
-                System.getProperty("os.arch"),
-                System.getProperty("os.version"),
-                System.getProperty("java.version"),
-                System.getProperty("java.vm.version"),
-                System.getProperty("java.vm.name")
-        );
-    }
+  @Override
+  public SystemInfoDTO getSystemInfo() {
+    return new SystemInfoDTO(
+        System.getProperty("os.name"),
+        System.getProperty("os.arch"),
+        System.getProperty("os.version"),
+        System.getProperty("java.version"),
+        System.getProperty("java.vm.version"),
+        System.getProperty("java.vm.name")
+    );
+  }
 }

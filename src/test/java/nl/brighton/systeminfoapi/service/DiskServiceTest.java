@@ -5,22 +5,22 @@ import org.junit.jupiter.api.Test;
 
 class DiskServiceTest {
 
-    private DiskService sut;
+  private DiskService sut;
 
 
-    @BeforeEach
-    void setUp() {
-        sut = new DiskServiceImpl();
-    }
+  @BeforeEach
+  void setUp() {
+    sut = new DiskServiceImpl();
+  }
 
-    @Test
-    void getAllDiskInfo() {
+  @Test
+  void getAllDiskInfo() {
 
-    }
+  }
 
-    @Test
-    void getDiskInfo() {
+  @Test
+  void getDiskInfo() {
 
-    }
+  }
 
 }

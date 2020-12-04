@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "memory")
 public class MemoryResource {
 
-    @Autowired
-    private MemoryService service;
+  @Autowired
+  private MemoryService service;
 
 
-    @ResponseBody
-    @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<MemoryInfoDTO> getMemoryInfo() {
-        return ResponseEntity.ok(service.getMemoryInfo());
-    }
+  @ResponseBody
+  @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<MemoryInfoDTO> getMemoryInfo() {
+    return ResponseEntity.ok(service.getMemoryInfo());
+  }
 
-    public void setService(MemoryService service) {
-        this.service = service;
-    }
+  public void setService(MemoryService service) {
+    this.service = service;
+  }
 }
