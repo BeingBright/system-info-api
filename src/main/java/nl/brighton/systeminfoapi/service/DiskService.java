@@ -5,7 +5,7 @@ import nl.brighton.systeminfoapi.dto.DiskInfoDTO;
 
 public interface DiskService {
 
-    DiskInfoCollection getAllDiskInfo();
+  DiskInfoCollection getAllDiskInfo();
 
-    DiskInfoDTO getDiskInfo(String name);
+  DiskInfoDTO getDiskInfo(String name);
 }
