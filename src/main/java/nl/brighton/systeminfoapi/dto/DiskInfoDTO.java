@@ -16,6 +16,13 @@ public class DiskInfoDTO {
     this.usableSpace = usableSpace;
   }
 
+  public DiskInfoDTO(String absolutePath) {
+    this.absolutePath = absolutePath;
+    this.totalSpace = 0;
+    this.freeSpace = 0;
+    this.usableSpace = 0;
+  }
+
   public String getAbsolutePath() {
     return absolutePath;
   }
@@ -41,10 +48,7 @@ public class DiskInfoDTO {
       return false;
     }
     DiskInfoDTO that = (DiskInfoDTO) o;
-    return totalSpace == that.totalSpace &&
-        freeSpace == that.freeSpace &&
-        usableSpace == that.usableSpace &&
-        Objects.equals(absolutePath, that.absolutePath);
+    return Objects.equals(absolutePath, that.absolutePath);
   }
 
   @Override
