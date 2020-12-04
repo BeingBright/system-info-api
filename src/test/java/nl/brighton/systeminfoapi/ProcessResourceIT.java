@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 
 @Tag("integration-test")
-class NetworkResourceTest {
+class ProcessResourceIT {
 
   @BeforeEach
   void setUp() {
