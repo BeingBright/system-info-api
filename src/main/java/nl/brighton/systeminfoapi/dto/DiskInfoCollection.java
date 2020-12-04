@@ -38,8 +38,8 @@ public class DiskInfoCollection {
 
   @Override
   public String toString() {
-    return "MemoryInfoCollection{" +
-        "collection=" + disks +
+    return "DiskInfoCollection{" +
+        "disks=" + disks +
         '}';
   }
 
