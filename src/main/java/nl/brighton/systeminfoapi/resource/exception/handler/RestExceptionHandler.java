@@ -42,7 +42,7 @@ public class RestExceptionHandler {
     private final String status;
     private final int statusCode;
 
-    JSONException(String message, String status, int statsCode) {
+    public JSONException(String message, String status, int statsCode) {
       this.message = message;
       this.status = status;
       this.statusCode = statsCode;

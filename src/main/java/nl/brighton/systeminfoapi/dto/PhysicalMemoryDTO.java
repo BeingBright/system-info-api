@@ -26,20 +26,40 @@ public class PhysicalMemoryDTO {
     return bankLabel;
   }
 
+  public void setBankLabel(String bankLabel) {
+    this.bankLabel = bankLabel;
+  }
+
   public long getCapacity() {
     return capacity;
+  }
+
+  public void setCapacity(long capacity) {
+    this.capacity = capacity;
   }
 
   public long getClockSpeed() {
     return clockSpeed;
   }
 
+  public void setClockSpeed(long clockSpeed) {
+    this.clockSpeed = clockSpeed;
+  }
+
   public String getManufacturer() {
     return manufacturer;
   }
 
+  public void setManufacturer(String manufacturer) {
+    this.manufacturer = manufacturer;
+  }
+
   public String getMemoryType() {
     return memoryType;
+  }
+
+  public void setMemoryType(String memoryType) {
+    this.memoryType = memoryType;
   }
 
   @Override

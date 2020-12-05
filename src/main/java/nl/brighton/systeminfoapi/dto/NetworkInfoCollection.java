@@ -5,14 +5,22 @@ import java.util.Objects;
 
 public class NetworkInfoCollection {
 
-  private final ArrayList<NetworkInfoDTO> networkInfos;
+  private ArrayList<NetworkInfoDTO> networkInfos;
 
   public NetworkInfoCollection(ArrayList<NetworkInfoDTO> networkInfos) {
     this.networkInfos = networkInfos;
   }
 
+  public NetworkInfoCollection() {
+  }
+
   public ArrayList<NetworkInfoDTO> getNetworkInfos() {
     return networkInfos;
+  }
+
+  public void setNetworkInfos(
+      ArrayList<NetworkInfoDTO> networkInfos) {
+    this.networkInfos = networkInfos;
   }
 
   @Override

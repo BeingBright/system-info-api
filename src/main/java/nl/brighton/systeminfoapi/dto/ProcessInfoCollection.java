@@ -5,7 +5,10 @@ import java.util.Objects;
 
 public class ProcessInfoCollection {
 
-  private final ArrayList<ProcessInfoDTO> processes;
+  private ArrayList<ProcessInfoDTO> processes;
+
+  public ProcessInfoCollection() {
+  }
 
   public ProcessInfoCollection(ArrayList<ProcessInfoDTO> processes) {
     this.processes = processes;
@@ -13,6 +16,10 @@ public class ProcessInfoCollection {
 
   public ArrayList<ProcessInfoDTO> getProcesses() {
     return processes;
+  }
+
+  public void setProcesses(ArrayList<ProcessInfoDTO> processes) {
+    this.processes = processes;
   }
 
   @Override

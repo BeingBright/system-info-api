@@ -5,10 +5,11 @@ import java.util.Objects;
 
 public class MemoryInfoDTO {
 
+  private final ArrayList<PhysicalMemoryDTO> physicalMemory;
   private long total;
   private long available;
   private long pageSize;
-  private final ArrayList<PhysicalMemoryDTO> physicalMemory;
+
 
   public MemoryInfoDTO() {
     this.physicalMemory = new ArrayList<>();
@@ -26,12 +27,24 @@ public class MemoryInfoDTO {
     return total;
   }
 
+  public void setTotal(long total) {
+    this.total = total;
+  }
+
   public long getAvailable() {
     return available;
   }
 
+  public void setAvailable(long available) {
+    this.available = available;
+  }
+
   public long getPageSize() {
     return pageSize;
+  }
+
+  public void setPageSize(long pageSize) {
+    this.pageSize = pageSize;
   }
 
   public ArrayList<PhysicalMemoryDTO> getPhysicalMemory() {

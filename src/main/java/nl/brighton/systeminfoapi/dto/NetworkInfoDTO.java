@@ -5,13 +5,16 @@ import java.util.Objects;
 
 public class NetworkInfoDTO {
 
-  private final String name;
-  private final String[] IPv4;
-  private final String[] IPV6;
-  private final long bytesSent;
-  private final long bytesReceived;
-  private final long packetSent;
-  private final long packetReceived;
+  private String name;
+  private String[] IPv4;
+  private String[] IPV6;
+  private long bytesSent;
+  private long bytesReceived;
+  private long packetSent;
+  private long packetReceived;
+
+  public NetworkInfoDTO() {
+  }
 
   public NetworkInfoDTO(String name, String[] IPv4, String[] IPV6, long bytesSent,
       long bytesReceived, long packetSent, long packetReceived) {
@@ -28,28 +31,56 @@ public class NetworkInfoDTO {
     return name;
   }
 
+  public void setName(String name) {
+    this.name = name;
+  }
+
   public String[] getIPv4() {
     return IPv4;
+  }
+
+  public void setIPv4(String[] IPv4) {
+    this.IPv4 = IPv4;
   }
 
   public String[] getIPV6() {
     return IPV6;
   }
 
+  public void setIPV6(String[] IPV6) {
+    this.IPV6 = IPV6;
+  }
+
   public long getBytesSent() {
     return bytesSent;
+  }
+
+  public void setBytesSent(long bytesSent) {
+    this.bytesSent = bytesSent;
   }
 
   public long getBytesReceived() {
     return bytesReceived;
   }
 
+  public void setBytesReceived(long bytesReceived) {
+    this.bytesReceived = bytesReceived;
+  }
+
   public long getPacketSent() {
     return packetSent;
   }
 
+  public void setPacketSent(long packetSent) {
+    this.packetSent = packetSent;
+  }
+
   public long getPacketReceived() {
     return packetReceived;
+  }
+
+  public void setPacketReceived(long packetReceived) {
+    this.packetReceived = packetReceived;
   }
 
   @Override

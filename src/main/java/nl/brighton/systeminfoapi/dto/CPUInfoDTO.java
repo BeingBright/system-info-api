@@ -5,9 +5,12 @@ import java.util.Objects;
 
 public class CPUInfoDTO {
 
-  private final int numberOfCores;
-  private final long maxFrequency;
-  private final ArrayList<CPUCoreDTO> cores;
+  private int numberOfCores;
+  private long maxFrequency;
+  private ArrayList<CPUCoreDTO> cores;
+
+  public CPUInfoDTO() {
+  }
 
   public CPUInfoDTO(int numberOfCores, long maxFrequency, ArrayList<CPUCoreDTO> cores) {
     this.numberOfCores = numberOfCores;
@@ -19,22 +22,34 @@ public class CPUInfoDTO {
     return numberOfCores;
   }
 
+  public void setNumberOfCores(int numberOfCores) {
+    this.numberOfCores = numberOfCores;
+  }
+
   public long getMaxFrequency() {
     return maxFrequency;
+  }
+
+  public void setMaxFrequency(long maxFrequency) {
+    this.maxFrequency = maxFrequency;
   }
 
   public ArrayList<CPUCoreDTO> getCores() {
     return cores;
   }
 
+  public void setCores(ArrayList<CPUCoreDTO> cores) {
+    this.cores = cores;
+  }
+
   @Override
   public boolean equals(Object o) {
-      if (this == o) {
-          return true;
-      }
-      if (o == null || getClass() != o.getClass()) {
-          return false;
-      }
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
     CPUInfoDTO that = (CPUInfoDTO) o;
     return numberOfCores == that.numberOfCores &&
         maxFrequency == that.maxFrequency &&

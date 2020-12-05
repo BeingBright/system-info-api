@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 import nl.brighton.systeminfoapi.dto.DiskInfoCollection;
 import nl.brighton.systeminfoapi.dto.DiskInfoDTO;
 import nl.brighton.systeminfoapi.service.DiskService;
+import nl.brighton.systeminfoapi.service.exception.DiskNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -25,7 +26,8 @@ class DiskResourceTest {
     sut = new DiskResource();
     mockedService = mock(DiskService.class);
     when(mockedService.getAllDiskInfo()).thenReturn(new DiskInfoCollection(null));
-    when(mockedService.getDiskInfo(anyString())).thenReturn(new DiskInfoDTO("", 0, 0, 0));
+    when(mockedService.getDiskInfo("D")).thenReturn(new DiskInfoDTO("", 0, 0, 0));
+    when(mockedService.getDiskInfo("NO")).thenThrow(new DiskNotFoundException("NO: not found"));
     sut.setService(mockedService);
   }
 
@@ -37,7 +39,7 @@ class DiskResourceTest {
   }
 
   @Test
-  void getAllDiskInfoReturnsObjectOfTypeCPUInfoDTO() {
+  void getAllDiskInfoReturnsObjectOfTypeDiskInfoDTO() {
     DiskInfoCollection expected = new DiskInfoCollection(null);
     DiskInfoCollection result = sut.getAllDiskInfo().getBody();
     assertEquals(expected, result);
@@ -57,7 +59,7 @@ class DiskResourceTest {
   }
 
   @Test
-  void getDiskInfoReturnsObjectOfTypeCPUInfoDTO() {
+  void getDiskInfoReturnsObjectOfTypeDiskInfoDTO() {
     DiskInfoDTO expected = new DiskInfoDTO("", 0, 0, 0);
     DiskInfoDTO result = sut.getDiskInfo("D").getBody();
     assertEquals(expected, result);

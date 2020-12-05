@@ -4,13 +4,16 @@ import java.util.Objects;
 
 public class SystemInfoDTO {
 
-  private final String osName;
-  private final String osArch;
-  private final String osVersion;
+  private String osName;
+  private String osArch;
+  private String osVersion;
 
-  private final String javaVersion;
-  private final String javaVMVersion;
-  private final String javaVMName;
+  private String javaVersion;
+  private String javaVMVersion;
+  private String javaVMName;
+
+  public SystemInfoDTO() {
+  }
 
   public SystemInfoDTO(String osName, String osArch, String osVersion, String javaVersion,
       String javaVMVersion, String javaVMName) {
@@ -26,24 +29,48 @@ public class SystemInfoDTO {
     return osName;
   }
 
+  public void setOsName(String osName) {
+    this.osName = osName;
+  }
+
   public String getOsArch() {
     return osArch;
+  }
+
+  public void setOsArch(String osArch) {
+    this.osArch = osArch;
   }
 
   public String getOsVersion() {
     return osVersion;
   }
 
+  public void setOsVersion(String osVersion) {
+    this.osVersion = osVersion;
+  }
+
   public String getJavaVersion() {
     return javaVersion;
+  }
+
+  public void setJavaVersion(String javaVersion) {
+    this.javaVersion = javaVersion;
   }
 
   public String getJavaVMVersion() {
     return javaVMVersion;
   }
 
+  public void setJavaVMVersion(String javaVMVersion) {
+    this.javaVMVersion = javaVMVersion;
+  }
+
   public String getJavaVMName() {
     return javaVMName;
+  }
+
+  public void setJavaVMName(String javaVMName) {
+    this.javaVMName = javaVMName;
   }
 
   @Override

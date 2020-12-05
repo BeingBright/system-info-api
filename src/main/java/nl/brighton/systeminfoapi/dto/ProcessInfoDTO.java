@@ -4,17 +4,19 @@ import java.util.Objects;
 
 public class ProcessInfoDTO {
 
-  private final int processID;
-  private final String name;
-  private final long kernelTime;
-  private final int parentProcessID;
-  private final String userID;
-  private final long upTime;
-  private final int priority;
-  private final long bytesRead;
-  private final long bytesWritten;
-  private final int bitness;
+  private int processID;
+  private String name;
+  private long kernelTime;
+  private int parentProcessID;
+  private String userID;
+  private long upTime;
+  private int priority;
+  private long bytesRead;
+  private long bytesWritten;
+  private int bitness;
 
+  public ProcessInfoDTO() {
+  }
 
   public ProcessInfoDTO(int processID, String name, long kernelTime, int parentProcessID,
       String userID, long upTime, int priority, long bytesRead, long bytesWritten, int bitness) {
@@ -34,40 +36,80 @@ public class ProcessInfoDTO {
     return processID;
   }
 
+  public void setProcessID(int processID) {
+    this.processID = processID;
+  }
+
   public String getName() {
     return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public long getKernelTime() {
     return kernelTime;
   }
 
+  public void setKernelTime(long kernelTime) {
+    this.kernelTime = kernelTime;
+  }
+
   public int getParentProcessID() {
     return parentProcessID;
+  }
+
+  public void setParentProcessID(int parentProcessID) {
+    this.parentProcessID = parentProcessID;
   }
 
   public String getUserID() {
     return userID;
   }
 
+  public void setUserID(String userID) {
+    this.userID = userID;
+  }
+
   public long getUpTime() {
     return upTime;
+  }
+
+  public void setUpTime(long upTime) {
+    this.upTime = upTime;
   }
 
   public int getPriority() {
     return priority;
   }
 
+  public void setPriority(int priority) {
+    this.priority = priority;
+  }
+
   public long getBytesRead() {
     return bytesRead;
+  }
+
+  public void setBytesRead(long bytesRead) {
+    this.bytesRead = bytesRead;
   }
 
   public long getBytesWritten() {
     return bytesWritten;
   }
 
+  public void setBytesWritten(long bytesWritten) {
+    this.bytesWritten = bytesWritten;
+  }
+
   public int getBitness() {
     return bitness;
+  }
+
+  public void setBitness(int bitness) {
+    this.bitness = bitness;
   }
 
   @Override

@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class DiskInfoCollection {
 
-  private final ArrayList<DiskInfoDTO> disks;
+  private ArrayList<DiskInfoDTO> disks;
 
   public DiskInfoCollection() {
     disks = new ArrayList<>();
@@ -17,6 +17,10 @@ public class DiskInfoCollection {
 
   public ArrayList<DiskInfoDTO> getDisks() {
     return disks;
+  }
+
+  public void setDisks(ArrayList<DiskInfoDTO> disks) {
+    this.disks = disks;
   }
 
   @Override
