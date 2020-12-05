@@ -1,7 +1,8 @@
 package nl.brighton.systeminfoapi.service;
 
-import nl.brighton.systeminfoapi.dto.CPU;
+import nl.brighton.systeminfoapi.dto.CPUInfoDTO;
 
 public interface CPUService {
-    CPU getCPUInfo();
+
+  CPUInfoDTO getCPUInfo();
 }

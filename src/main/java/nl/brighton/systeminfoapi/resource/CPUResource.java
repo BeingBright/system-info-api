@@ -1,6 +1,6 @@
 package nl.brighton.systeminfoapi.resource;
 
-import nl.brighton.systeminfoapi.dto.CPU;
+import nl.brighton.systeminfoapi.dto.CPUInfoDTO;
 import nl.brighton.systeminfoapi.service.CPUService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "cpu")
 public class CPUResource {
 
-    @Autowired
-    private CPUService service;
+  private CPUService service;
 
-    @ResponseBody
-    @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CPU> getCPUInfo() {
-        return ResponseEntity.ok(service.getCPUInfo());
-    }
+  @ResponseBody
+  @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<CPUInfoDTO> getCPUInfo() {
+    return ResponseEntity.ok(service.getCPUInfo());
+  }
 
-    public void setService(CPUService service) {
-        this.service = service;
-    }
+  @Autowired
+  public void setService(CPUService service) {
+    this.service = service;
+  }
 }
