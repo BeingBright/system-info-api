@@ -17,7 +17,7 @@ class SystemResourceIT {
   @Test
   void getSystemInfoReturnsStatusOK() {
     HttpStatus expected = HttpStatus.OK;
-    HttpStatus result = sendGET("http://localhost:8080/system-info/system",
+    HttpStatus result = sendGET("http://localhost:7070/system-info/system",
         SystemInfoDTO.class).getStatusCode();
     assertEquals(expected, result);
   }
@@ -25,7 +25,7 @@ class SystemResourceIT {
   @Test
   void getSystemInfoReturnsObjectOfTypeCPUInfoDTO() {
     SystemInfoDTO expected = new SystemInfoDTO("", "", "", "", "", "");
-    SystemInfoDTO result = (SystemInfoDTO) sendGET("http://localhost:8080/system-info/system",
+    SystemInfoDTO result = (SystemInfoDTO) sendGET("http://localhost:7070/system-info/system",
         SystemInfoDTO.class).getBody();
     assertEquals(expected.getClass(), result.getClass());
   }

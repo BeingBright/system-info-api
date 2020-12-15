@@ -20,7 +20,7 @@ class CPUResourceIT {
   void getCPUInfoReturnsStatusOK() {
     HttpStatus expected = HttpStatus.OK;
     HttpStatus result = sendGET(
-        "http://localhost:8080/system-info/cpu", CPUInfoDTO.class).getStatusCode();
+        "http://localhost:7070/system-info/cpu", CPUInfoDTO.class).getStatusCode();
     Assertions.assertEquals(expected, result);
   }
 
@@ -28,7 +28,7 @@ class CPUResourceIT {
   void getCPUInfoReturnsObjectOfTypeCPUInfoDTO() {
     CPUInfoDTO expected = new CPUInfoDTO(0, 0, null);
     CPUInfoDTO result = ((ResponseEntity<CPUInfoDTO>) sendGET(
-        "http://localhost:8080/system-info/cpu", CPUInfoDTO.class)).getBody();
+        "http://localhost:7070/system-info/cpu", CPUInfoDTO.class)).getBody();
     Assertions.assertEquals(expected.getClass(), result.getClass());
   }
 
