@@ -17,7 +17,7 @@ class MemoryResourceIT {
   @Test
   void getMemoryInfoReturnsStatusOK() {
     HttpStatus expected = HttpStatus.OK;
-    HttpStatus result = sendGET("http://localhost:8080/system-info/memory",
+    HttpStatus result = sendGET("http://localhost:6060/system-info/memory",
         MemoryInfoDTO.class).getStatusCode();
     assertEquals(expected, result);
   }
@@ -25,7 +25,7 @@ class MemoryResourceIT {
   @Test
   void getMemoryInfoReturnsObjectOfTypeCPUInfoDTO() {
     MemoryInfoDTO expected = new MemoryInfoDTO();
-    MemoryInfoDTO result = (MemoryInfoDTO) sendGET("http://localhost:8080/system-info/memory",
+    MemoryInfoDTO result = (MemoryInfoDTO) sendGET("http://localhost:6060/system-info/memory",
         MemoryInfoDTO.class).getBody();
     assertEquals(expected.getClass(), result.getClass());
   }

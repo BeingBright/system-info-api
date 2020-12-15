@@ -17,7 +17,7 @@ class ProcessResourceIT {
   @Test
   void getProcessInfoReturnsStatusOK() {
     HttpStatus expected = HttpStatus.OK;
-    HttpStatus result = sendGET("http://localhost:8080/system-info/process",
+    HttpStatus result = sendGET("http://localhost:6060/system-info/process",
         ProcessInfoCollection.class).getStatusCode();
     assertEquals(expected, result);
   }
@@ -26,7 +26,7 @@ class ProcessResourceIT {
   void getProcessInfoReturnsObjectOfTypeCPUInfoDTO() {
     ProcessInfoCollection expected = new ProcessInfoCollection();
     ProcessInfoCollection result = (ProcessInfoCollection) sendGET(
-        "http://localhost:8080/system-info/process",
+        "http://localhost:6060/system-info/process",
         ProcessInfoCollection.class).getBody();
     assertEquals(expected.getClass(), result.getClass());
   }

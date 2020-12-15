@@ -17,7 +17,7 @@ class NetworkResourceIT {
   @Test
   void getNetworkInfoReturnsStatusOK() {
     HttpStatus expected = HttpStatus.OK;
-    HttpStatus result = sendGET("http://localhost:8080/system-info/network",
+    HttpStatus result = sendGET("http://localhost:6060/system-info/network",
         NetworkInfoCollection.class).getStatusCode();
     assertEquals(expected, result);
   }
@@ -26,7 +26,7 @@ class NetworkResourceIT {
   void getNetworkInfoReturnsObjectOfTypeCPUInfoDTO() {
     NetworkInfoCollection expected = new NetworkInfoCollection(null);
     NetworkInfoCollection result = (NetworkInfoCollection) sendGET(
-        "http://localhost:8080/system-info/network",
+        "http://localhost:6060/system-info/network",
         NetworkInfoCollection.class).getBody();
     assertEquals(expected.getClass(), result.getClass());
   }

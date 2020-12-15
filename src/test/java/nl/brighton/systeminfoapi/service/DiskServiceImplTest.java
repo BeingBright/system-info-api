@@ -1,15 +1,11 @@
 package nl.brighton.systeminfoapi.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.File;
-import java.util.ArrayList;
-import nl.brighton.systeminfoapi.dto.DiskInfoCollection;
-import nl.brighton.systeminfoapi.dto.DiskInfoDTO;
 import nl.brighton.systeminfoapi.service.exception.DiskNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
@@ -40,24 +36,6 @@ class DiskServiceImplTest {
   void testIfGetDiskUsesService() {
     sut.getDiskInfo("c");
     verify(mockedSystemTelemetryService).getRoots();
-  }
-
-  @Test
-  void testIfGetAllDisksReturnsCorrectValue() {
-    ArrayList<DiskInfoDTO> diskInfo = new ArrayList<>();
-    diskInfo.add(new DiskInfoDTO("C:\\"));
-    diskInfo.add(new DiskInfoDTO("D:\\"));
-
-    var expected = new DiskInfoCollection(diskInfo);
-    var result = sut.getAllDiskInfo();
-    assertEquals(expected, result);
-  }
-
-  @Test
-  void testIfGetDiskReturnsCorrectValue() {
-    DiskInfoDTO expected = new DiskInfoDTO("C:\\", 0, 0, 0);
-    DiskInfoDTO result = sut.getDiskInfo("c");
-    assertEquals(expected, result);
   }
 
   @Test

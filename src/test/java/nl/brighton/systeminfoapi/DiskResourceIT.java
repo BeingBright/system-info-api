@@ -19,7 +19,7 @@ class DiskResourceIT {
   @Test
   void getAllDiskInfoReturnsStatusOK() {
     HttpStatus expected = HttpStatus.OK;
-    HttpStatus result = sendGET("http://localhost:8080/system-info/disk", DiskInfoCollection.class)
+    HttpStatus result = sendGET("http://localhost:6060/system-info/disk", DiskInfoCollection.class)
         .getStatusCode();
     assertEquals(expected, result);
   }
@@ -28,14 +28,14 @@ class DiskResourceIT {
   void getAllDiskInfoReturnsObjectOfTypeDiskInfoDTO() {
     DiskInfoCollection expected = new DiskInfoCollection(null);
     DiskInfoCollection result = (DiskInfoCollection) sendGET(
-        "http://localhost:8080/system-info/disk", DiskInfoCollection.class).getBody();
+        "http://localhost:6060/system-info/disk", DiskInfoCollection.class).getBody();
     assertEquals(expected.getClass(), result.getClass());
   }
 
   @Test
   void getDiskInfoReturnsStatusOK() {
     HttpStatus expected = HttpStatus.OK;
-    HttpStatus result = sendGET("http://localhost:8080/system-info/disk/d",
+    HttpStatus result = sendGET("http://localhost:6060/system-info/disk/d",
         DiskInfoCollection.class)
         .getStatusCode();
     assertEquals(expected, result);
@@ -44,7 +44,7 @@ class DiskResourceIT {
   @Test
   void getDiskInfoReturnsObjectOfTypeDiskInfoDTO() {
     DiskInfoDTO expected = new DiskInfoDTO("", 0, 0, 0);
-    DiskInfoDTO result = (DiskInfoDTO) sendGET("http://localhost:8080/system-info/disk/d",
+    DiskInfoDTO result = (DiskInfoDTO) sendGET("http://localhost:6060/system-info/disk/d",
         DiskInfoDTO.class).getBody();
     assertEquals(expected.getClass(), result.getClass());
   }
@@ -52,7 +52,7 @@ class DiskResourceIT {
   @Test
   void getDiskInfoThrows404StatusCode() {
     try {
-      sendGET("http://localhost:8080/system-info/disk/no",
+      sendGET("http://localhost:6060/system-info/disk/no",
           DiskInfoDTO.class);
     } catch (HttpClientErrorException e) {
       HttpStatus expected = HttpStatus.NOT_FOUND;
