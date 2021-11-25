@@ -13,7 +13,7 @@ pipeline {
             agent {
                 docker{
                     image 'maven:3.8.1-adoptopenjdk-11'
-                    args '-v /root/.m2:/root/.m2 --detach --name "system-api-builder"'
+                    args '-v /root/.m2:/root/.m2 --detach --name "system-api-builder --e JAVA_HOME=\'/usr/lib/jvm/java-1.11.0-openjdk-armhf\'"'
                 }
             }
             steps {
