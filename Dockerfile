@@ -1,5 +1,5 @@
 FROM openjdk:11
 WORKDIR /
 ADD target/*.jar app.jar
-EXPOSE 50001
+EXPOSE 7070
 CMD java -jar app.jar
