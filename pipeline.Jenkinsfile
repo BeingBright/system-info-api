@@ -27,7 +27,7 @@ pipeline {
                 echo 'Deploy...'  
                 sh 'docker stop --time=1 system-api-container || true'
                 sh 'dokcer rm system-api-container || true'
-                sh 'docker build -t java:system-api -f Dockerfile'
+                sh 'docker build -t java:system-api -f Dockerfile .'
             }
         }
     }
